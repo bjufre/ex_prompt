@@ -24,7 +24,7 @@ end
 
 ## Documentation
 
-See the full documentation and API at [hex/ex_prompt](https://hex.pm/packages/ex_prompt).
+See the full documentation and API at [hexdocs/ex_prompt](http://hexdocs.pm/ex_prompt).
 
 # License
 
