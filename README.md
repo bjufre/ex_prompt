@@ -3,6 +3,13 @@
 ExPrompt is a helper package to add interactivity to your
 command line applications as easy as possible.
 
+It allows common operations such as:
+  - Asking for an answer.
+  - Asking for a "required" answer.
+  - Choosing between several options.
+  - Asking for confirmation.
+  - Asking for a password.
+
 ## Installation
 
 The package can be installed by adding `ex_prompt` to your list of dependencies in `mix.exs`:
