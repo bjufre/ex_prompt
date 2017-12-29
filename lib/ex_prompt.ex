@@ -57,7 +57,7 @@ defmodule ExPrompt do
 
   To ask whether the user wants to delete a file or not:
 
-    ExPrompt.confirm("Are you sure you want to delete this file?\n'")
+    ExPrompt.confirm("Are you sure you want to delete this file?\n")
   """
   @spec confirm(prompt) :: boolean()
   def confirm(prompt) do
