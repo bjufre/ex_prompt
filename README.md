@@ -1,4 +1,6 @@
 ![ExPrompt](/assets/ExPrompt@2x.png)
+[![Build Status](https://travis-ci.org/behind-design/ex_prompt.svg?branch=master)](https://travis-ci.org/behind-design/ex_prompt)
+[![Hex pm](http://img.shields.io/hexpm/v/ex_prompt.svg?style=flat)](https://hex.pm/packages/ex_prompt)
 
 ExPrompt is a helper package to add interactivity to your command line applications as easy as possible.
 
@@ -14,7 +16,7 @@ The package can be installed by adding `ex_prompt` to your list of dependencies 
 ```elixir
 def deps do
   [
-    {:ex_prompt, "~> 0.1.1"}
+    {:ex_prompt, "~> 0.1.2"}
   ]
 end
 ```
