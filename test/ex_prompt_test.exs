@@ -46,7 +46,7 @@ defmodule ExPromptTest do
         response = ExPrompt.confirm("Are you sure?")
         send self(), answer
         assert response == true
-      end) == "Are you sure?"
+      end) == "Are you sure? [Yn] "
 
       assert_received ^answer
     end
@@ -56,7 +56,7 @@ defmodule ExPromptTest do
         response = ExPrompt.confirm("Are you sure?")
         send self(), answer
         assert response == false
-      end) == "Are you sure?"
+      end) == "Are you sure? [Yn] "
 
       assert_received ^answer
     end
@@ -68,7 +68,7 @@ defmodule ExPromptTest do
       send self(), "nein"
       send self(), "no"
       assert answer == false
-    end) == "Are you sure?"
+    end) == "Are you sure? [Yn] "
 
     assert_received "nein"
     assert_received "no"

@@ -27,7 +27,7 @@ defmodule ExPrompt do
   """
   @spec string(prompt) :: String.t
   def string(prompt) do
-    case IO.gets("#{prompt}") do
+    case IO.gets(prompt) do
       :eof -> ""
       {:error, _reason} -> ""
       str -> String.trim_trailing(str)
@@ -57,11 +57,15 @@ defmodule ExPrompt do
 
   To ask whether the user wants to delete a file or not:
 
-    ExPrompt.confirm("Are you sure you want to delete this file?\n")
+    ExPrompt.confirm("Are you sure you want to delete this file?")
   """
   @spec confirm(prompt) :: boolean()
   def confirm(prompt) do
-    answer = string(prompt) |> String.downcase
+    answer =
+      String.trim(prompt)
+      |> Kernel.<>(" [Yn] ")
+      |> string()
+      |> String.downcase
 
     cond do
       answer in ~w(yes y) -> true
@@ -72,6 +76,8 @@ defmodule ExPrompt do
 
   @doc """
   Asks the user to select form a list of choices.
+  It returns either the index of the element in the list
+  or -1 if it's not found.
 
   This method tries first to get said element by the list number,
   if it fails it will attempt to get the index from the list of choices
@@ -84,12 +90,13 @@ defmodule ExPrompt do
   @spec choose(prompt, choices) :: integer()
   def choose(prompt, choices) do
     IO.puts("")
+
     answer =
       Enum.with_index(choices)
       |> Enum.reduce("", fn {c, i}, acc ->
         "#{acc}\s\s#{i + 1}) #{c}\n"
       end)
-      |> Kernel.<>("\n#{String.trim(prompt)}\s")
+      |> Kernel.<>("\n" <> String.trim(prompt) <> "\s")
       |> string()
 
     try do

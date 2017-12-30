@@ -1,0 +1,3 @@
+%{
+  "ex_prompt": {:hex, :ex_prompt, "0.1.0", "8f0ea77ae17378cb3fce9a4e8e17cc3e31916930ea125a52c68a0859919bfd89", [], [], "hexpm"},
+}

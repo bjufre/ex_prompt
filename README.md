@@ -1,4 +1,4 @@
-# ExPrompt
+![ExPrompt](/assets/ExPrompt@2x.png)
 
 ExPrompt is a helper package to add interactivity to your
 command line applications as easy as possible.
@@ -10,6 +10,8 @@ It allows common operations such as:
 - Asking for confirmation.
 - Asking for a password.
 
+## Preview
+
 ## Installation
 
 The package can be installed by adding `ex_prompt` to your list of dependencies in `mix.exs`:
@@ -17,7 +19,7 @@ The package can be installed by adding `ex_prompt` to your list of dependencies 
 ```elixir
 def deps do
   [
-    {:ex_prompt, "~> 0.1.0"}
+    {:ex_prompt, "~> 0.1.1"}
   ]
 end
 ```
