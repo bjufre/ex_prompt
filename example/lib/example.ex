@@ -1,4 +1,6 @@
 defmodule Example do
+  @colors ~w(Red Green Blue)
+
   def main(_argv) do
     IO.puts """
     Hello there!
@@ -8,18 +10,17 @@ defmodule Example do
 
     name = ExPrompt.string_required("What's your name?\s")
     color = ExPrompt.choose("What's your favorite color?", ~w(Red Green Blue))
-    sure = ExPrompt.confirm("Are you sure?")
     password = ExPrompt.password("Your super awesome password:")
 
-    sure? = if sure, do: "were", else: "weren't"
-
     IO.puts """
+
     PERFECT!
 
-    Your name is #{name} and favorite color is #{color}, to which you said that you #{sure?}.
-    Finally your password is: #{password}
+    Your name is `#{name}` and favorite color is `#{Enum.at(@colors, color)}` and your password is: `#{password}`
     """
 
-    ExPrompt.confirm("Is this correct?")
+    sure? = ExPrompt.confirm("Is this correct?")
+
+    if sure?, do: IO.puts("\nSee ya! :)"), else: IO.puts("\nOuch :(")
   end
 end

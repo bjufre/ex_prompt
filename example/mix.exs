@@ -30,7 +30,7 @@ defmodule Example.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_prompt, "~> 0.1.0"}
+      {:ex_prompt, github: "behind-design/ex_prompt"}
     ]
   end
 end

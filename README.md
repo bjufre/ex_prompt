@@ -1,16 +1,11 @@
 ![ExPrompt](/assets/ExPrompt@2x.png)
 
-ExPrompt is a helper package to add interactivity to your
-command line applications as easy as possible.
+ExPrompt is a helper package to add interactivity to your command line applications as easy as possible.
 
-It allows common operations such as:
-- Asking for an answer.
-- Asking for a "required" answer.
-- Choosing between several options.
-- Asking for confirmation.
-- Asking for a password.
+It allows common operations such as: _asking for an answer (required or not), choosing between several options, asking for confirmation and asking for a password_.
 
 ## Preview
+![ExPrompt](/assets/ex_prompt.gif)
 
 ## Installation
 

@@ -1,3 +1,1 @@
-%{
-  "ex_prompt": {:hex, :ex_prompt, "0.1.0", "8f0ea77ae17378cb3fce9a4e8e17cc3e31916930ea125a52c68a0859919bfd89", [], [], "hexpm"},
-}
+%{"ex_prompt": {:git, "https://github.com/behind-design/ex_prompt.git", "5298651d7c4c59c4d51542dd917ac37436e35913", []}}
