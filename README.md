@@ -17,7 +17,7 @@ The package can be installed by adding `ex_prompt` to your list of dependencies 
 ```elixir
 def deps do
   [
-    {:ex_prompt, "~> 0.1.2"}
+    {:ex_prompt, "~> 0.1.3"}
   ]
 end
 ```
