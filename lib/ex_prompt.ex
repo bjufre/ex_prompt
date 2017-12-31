@@ -50,7 +50,7 @@ defmodule ExPrompt do
   It allows the user to answer or respond with the following options:
     - Yes, yes, YES, Y, y
     - No, no, NO, N, n
-  
+
   In case that the answer is none of the above, it will prompt again until we do.
 
   ## Examples
