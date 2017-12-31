@@ -52,9 +52,9 @@ defmodule ExPrompt.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-     # Docs
-     {:ex_doc, "~> 0.16", only: :dev, runtime: false},
-     {:earmark, ">= 1.2.3", only: :dev, runtime: false},
+      # Docs
+      {:ex_doc, "~> 0.16", only: :dev, runtime: false},
+      {:earmark, ">= 1.2.3", only: :dev, runtime: false},
     ]
   end
 end

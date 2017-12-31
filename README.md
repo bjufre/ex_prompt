@@ -1,6 +1,7 @@
 ![ExPrompt](/assets/ExPrompt@2x.png)
 [![Build Status](https://travis-ci.org/behind-design/ex_prompt.svg?branch=master)](https://travis-ci.org/behind-design/ex_prompt)
 [![Hex pm](http://img.shields.io/hexpm/v/ex_prompt.svg?style=flat)](https://hex.pm/packages/ex_prompt)
+[![Hex.pm](https://img.shields.io/hexpm/dt/ex_prompt.svg)](https://hex.pm/packages/ex_prompt)
 
 ExPrompt is a helper package to add interactivity to your command line applications as easy as possible.
 
