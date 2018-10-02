@@ -17,7 +17,7 @@ The package can be installed by adding `ex_prompt` to your list of dependencies 
 ```elixir
 def deps do
   [
-    {:ex_prompt, "~> 0.1.3"}
+    {:ex_prompt, "~> 0.1.4"}
   ]
 end
 ```
@@ -68,6 +68,9 @@ It allows the user to answer or respond with the following options:
   - No, no, NO, N, n
 
 In case that the answer is none of the above, it will prompt again until we do.
+
+#### `yes?(prompt)`
+Alias for `confirm(prompt)`.
 
 ```elixir
 iex> ExPrompt.confirm("Are you sure?")
