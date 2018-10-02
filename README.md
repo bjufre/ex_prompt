@@ -69,13 +69,13 @@ It allows the user to answer or respond with the following options:
 
 In case that the answer is none of the above, it will prompt again until we do.
 
-#### `yes?(prompt)`
-Alias for `confirm(prompt)`.
-
 ```elixir
 iex> ExPrompt.confirm("Are you sure?")
 iex> Are you sure? [Yn] |
 ```
+
+#### `yes?(prompt)`
+Alias for `confirm(prompt)`.
 
 #### `password(prompt, hide \\ true)`
 Asks for a password.
