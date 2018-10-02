@@ -34,6 +34,10 @@ defmodule ExPrompt do
     end
   end
 
+  @doc "Alias for `string/1`."
+  @spec get(prompt) :: String.t
+  def get(prompt), do: string(prompt)
+
   @doc """
   Same as `string/1` but it will continue to "prompt" the user in case of an empty response.
   """
@@ -44,6 +48,10 @@ defmodule ExPrompt do
       str -> str
     end
   end
+
+  @doc "Alias for `string_required/1`."
+  @spec get_required(prompt) :: String.t
+  def get_required(prompt), do: string_required(prompt)
 
   @doc """
   Asks for confirmation to the user.
@@ -73,6 +81,10 @@ defmodule ExPrompt do
       true -> confirm(prompt)
     end
   end
+
+  @doc "Alias for `confirm/1`."
+  @spec yes?(prompt) :: boolean()
+  def yes?(prompt), do: confirm(prompt)
 
   @doc """
   Asks the user to select form a list of choices.
