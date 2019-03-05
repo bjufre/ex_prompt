@@ -52,7 +52,7 @@ if it fails it will attempt to get the index from the list of choices
 by the value that the user wrote.
 
 ```elixir
-iex> ExPrompt.string_required("What is your favorite color?", ~w(Red Green Blue))
+iex> ExPrompt.choose("What is your favorite color?", ~w(Red Green Blue))
 iex>
       1) Red
       2) Green
