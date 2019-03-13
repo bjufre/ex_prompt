@@ -11,8 +11,8 @@ defmodule ExPrompt do
     - Asking for a password.
   """
 
-  @type prompt :: String.t
-  @type choices :: list(String.t)
+  @type prompt :: String.t()
+  @type choices :: list(String.t())
 
   @doc """
   Reads a line from `:stdio` displaying the prompt that is passed in.
@@ -25,7 +25,7 @@ defmodule ExPrompt do
 
     ExPrompt.string("What is your name?\n")
   """
-  @spec string(prompt) :: String.t
+  @spec string(prompt) :: String.t()
   def string(prompt) do
     case IO.gets(prompt) do
       :eof -> ""
@@ -35,13 +35,13 @@ defmodule ExPrompt do
   end
 
   @doc "Alias for `string/1`."
-  @spec get(prompt) :: String.t
+  @spec get(prompt) :: String.t()
   def get(prompt), do: string(prompt)
 
   @doc """
   Same as `string/1` but it will continue to "prompt" the user in case of an empty response.
   """
-  @spec string_required(prompt) :: String.t
+  @spec string_required(prompt) :: String.t()
   def string_required(prompt) do
     case string(prompt) do
       "" -> string_required(prompt)
@@ -50,7 +50,7 @@ defmodule ExPrompt do
   end
 
   @doc "Alias for `string_required/1`."
-  @spec get_required(prompt) :: String.t
+  @spec get_required(prompt) :: String.t()
   def get_required(prompt), do: string_required(prompt)
 
   @doc """
@@ -73,7 +73,7 @@ defmodule ExPrompt do
       String.trim(prompt)
       |> Kernel.<>(" [Yn] ")
       |> string()
-      |> String.downcase
+      |> String.downcase()
 
     cond do
       answer in ~w(yes y) -> true
@@ -116,7 +116,7 @@ defmodule ExPrompt do
       if n > 0 and n <= length(choices), do: n - 1, else: -1
     rescue
       _e in ArgumentError ->
-        case Enum.find_index(choices, & &1 == answer) do
+        case Enum.find_index(choices, &(&1 == answer)) do
           nil -> -1
           idx -> idx
         end
@@ -136,7 +136,7 @@ defmodule ExPrompt do
 
     ExPrompt.password("Password: ", false)
   """
-  @spec password(prompt, hide :: boolean()) :: String.t
+  @spec password(prompt, hide :: boolean()) :: String.t()
   def password(prompt, hide \\ true) do
     prompt = String.trim(prompt)
 
@@ -146,20 +146,21 @@ defmodule ExPrompt do
         ref = make_ref()
         value = IO.gets(prompt <> " ")
 
-        send pid, {:done, self(), ref}
+        send(pid, {:done, self(), ref})
         receive do: ({:done, ^pid, ^ref} -> :ok)
 
         value
+
       false ->
         IO.gets(prompt <> " ")
     end
-    |> String.trim
+    |> String.trim()
   end
 
   defp pw_loop(prompt) do
     receive do
       {:done, parent, ref} ->
-        send parent, {:done, self(), ref}
+        send(parent, {:done, self(), ref})
         IO.write(:stderr, "\e[2K\r")
     after
       1 ->

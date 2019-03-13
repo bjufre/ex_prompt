@@ -12,7 +12,7 @@ defmodule ExPrompt.MixProject do
       description: description(),
       package: package(),
       deps: deps(),
-      docs: docs(),
+      docs: docs()
     ]
   end
 
@@ -41,11 +41,11 @@ defmodule ExPrompt.MixProject do
 
   defp package do
     [
-     name: :ex_prompt,
-     files: ["lib", "mix.exs", "README*", "LICENSE*"],
-     maintainers: ["Bernat Jufré Martínez"],
-     licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/behind-design/ex_prompt"}
+      name: :ex_prompt,
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Bernat Jufré Martínez"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/behind-design/ex_prompt"}
     ]
   end
 
@@ -54,7 +54,7 @@ defmodule ExPrompt.MixProject do
     [
       # Docs
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
-      {:earmark, ">= 1.2.3", only: :dev, runtime: false},
+      {:earmark, ">= 1.2.3", only: :dev, runtime: false}
     ]
   end
 end
