@@ -53,8 +53,8 @@ defmodule ExPrompt.MixProject do
   defp deps do
     [
       # Docs
-      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
-      {:earmark, ">= 1.2.3", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.24.2", only: :dev, runtime: false},
+      {:earmark, "~> 1.4", only: :dev, runtime: false}
     ]
   end
 end
