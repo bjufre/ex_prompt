@@ -7,7 +7,7 @@ defmodule ExPrompt.MixProject do
     [
       app: :ex_prompt,
       version: @version,
-      elixir: "~> 1.7",
+      elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       description: description(),
       package: package(),
